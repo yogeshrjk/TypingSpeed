@@ -1,4 +1,4 @@
-# TypingSpeed
+# TypingSpeedTest
 Type a short piece of text to find out how fast can you type. Test your typing speed in wpm on English,
 <img src="http://www.realsocialsignals.co/wp-content/uploads/2017/09/slide-2-image-2.gif" width="150px" align="right"/>
 It measures typing speed in WPM (words per minute). 
