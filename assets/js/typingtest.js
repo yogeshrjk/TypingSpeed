@@ -15,7 +15,7 @@ const typeWords = document.getElementById('myWords');
 const btn = document.getElementById('btn');
 let startTime, endTime;
 
-
+//start time
 const start = () => {
     let randomNum = Math.floor(Math.random() * sentence.length);
     msg.innerText = sentence[randomNum];
@@ -24,6 +24,7 @@ const start = () => {
     btn.innerText = "Done";
 }
 
+//end time
 const end = () => {
     let date = new Date();
     endTime = date.getTime();
@@ -34,15 +35,30 @@ const end = () => {
 
     let speed = Math.round((wordCount / totaltime) * 60);
 
-    let finalMsg = `You typed ${speed}wpm.`;
-    // finalMsg += compareWords(msg.innerText);
+    let finalMsg = `Your speed was ${speed} wpm.`;
+    finalMsg += compareWords(msg.innerText, totalStr);
     msg.innerText = finalMsg;
 
 }
-// const compareWords = (str1, str2) => {
 
-// }
+//compare input with given text
+const compareWords = (str1, str2) => {
+    let word1 = str1.split(" ");
+    let word2 = str2.split(" ");
+    let count = 0;
 
+    word1.forEach(function (value, index) {
+        if (value === word2[index]) {
+            count++;
+        }
+    })
+    let error = (word1.length - count);
+    return `
+    correct words: ${count}
+    Errors: ${error} `;
+}
+
+//count number of words
 const wordCounter = (str) => {
     let response = str.split(" ").length;
     return response;
