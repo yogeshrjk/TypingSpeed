@@ -15,16 +15,37 @@ const sentence =
 const msg = document.getElementById('msg');
 const typeWords = document.getElementById('myWords');
 const btn = document.getElementById('btn');
+const result = document.getElementById('resulttag');
+
 let startTime, endTime;
+let timer = 0;
+let interval = null;
 
 //start time
 const start = () => {
     let randomNum = Math.floor(Math.random() * sentence.length);
-    msg.innerText = sentence[randomNum];
+
+    //CUSTOM
+    let custom = sentence[randomNum];
+    custom.split("").forEach(char => {
+        let spantxt = document.createElement("span");
+        spantxt.innerHTML = char;
+        msg.appendChild(spantxt);
+    })
+
+    interval = setInterval(countDown, 1000);
+
+
+    // msg.innerText = sentence[randomNum];
     let date = new Date();
     startTime = date.getTime();
-    btn.innerText = "Done";
+    // btn.innerText = "Done";
+    document.getElementById("result").style.visibility = "hidden";
 }
+
+//countdown function
+
+
 
 //end time
 const end = () => {
@@ -37,10 +58,25 @@ const end = () => {
 
     let speed = Math.round((wordCount / totaltime) * 60);
 
-    let finalMsg = `Your speed was ${speed} wpm.`;
+    let finalMsg = `Speed: ${speed} wpm`;
     finalMsg += compareWords(msg.innerText, totalStr);
-    msg.innerText = finalMsg;
+    msg.innerText = "";
+    result.innerText = finalMsg;
+    document.getElementById("result").style.visibility = "visible";
+}
+let countDown = () => {
+    if (timer < 3) {
+        timer++;
+        btn.innerText = timer;
+    }
+    else {
+        typeWords.disabled = true;
+        clearInterval(interval);
+        timer = 0;
+        btn.innerText = "Start";
+        end();
 
+    }
 }
 
 //compare input with given text
@@ -51,13 +87,14 @@ const compareWords = (str1, str2) => {
 
     word1.forEach(function (value, index) {
         if (value == word2[index]) {
-            count++;
+            ++count;
         }
     })
     let error = (word1.length - count);
-    return `
+    return ` 
     correct words: ${count}
     Errors: ${error} `;
+
 }
 
 //count number of words
@@ -69,10 +106,15 @@ const wordCounter = (str) => {
 btn.addEventListener('click', function () {
     if (this.innerText == 'Start') {
         typeWords.disabled = false;
+        typeWords.value = "";
         start();
-    } else if (this.innerText == "Done") {
-        typeWords.disabled = true;
-        btn.innerText = "Start";
-        end();
+
+
     }
+    // else if (this.innerText == "Done") {
+    //     typeWords.disabled = true;
+    //     btn.innerText = "Start";
+    //     end();
+    // }
 })
+

@@ -13,34 +13,45 @@
 </head>
 
 <body
-    style="background: var(--bs-dark);transform-style: preserve-3d;min-height: 100vh;border-color: rgb(0,0,0);box-shadow: inset 0px 0px 20px 10px rgba(0,0,0,0.7); padding-bottom: 20px;">
-    <div class="d-flex justify-content-center align-items-start" style="padding-top: 50px;">
-        <h1 id="typed3"
-            style="color: var(--bs-gray-500);font-family: 'Carter One', serif;text-align: center;text-shadow: 4px 2px 0px var(--bs-gray-800);">
-        </h1>
-    </div>
-    <div style="min-height:20vh;">
-        <p id="msg"
-            style="color: white; text-align: center; padding: 20px 20% 0px 20%; font-family: Amaranth, sans-serif;font-size: 20px;">
-        </p>
-    </div>
-
-    <div class="container">
+    style="background: var(--bs-dark); min-height: 100vh;border-color: rgb(0,0,0);box-shadow: inset 0px 0px 20px 10px rgba(0,0,0,0.7); padding-bottom: 20px;">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col" style="height: fit-content;">
+            <!-- heading -->
+            <div class="col-12 d-flex justify-content-center align-items-center" style="padding-top: 50px;">
+                <h1 id="typed3"
+                    style="color: var(--bs-gray-500);font-family: 'Carter One', serif;text-align: center;text-shadow: 4px 2px 0px var(--bs-gray-800);">
+                </h1>
+            </div>
+
+            <!-- typing text -->
+            <div class="col-12" style="height: fit-content;">
+                <p id="msg"
+                    style="color: white; text-align: center; padding: 20px 20% 0px 20%; font-family: Amaranth, sans-serif;font-size: 20px;">
+                </p>
+            </div>
+            <div id="result" class="col-12 mx-auto" style="padding: 5px 40px 5px 40px;">
+                <span id="resulttag"></span>
+            </div>
+
+            <!-- input area-->
+
+            <div class="col-12" style="height: fit-content;">
                 <div class="d-flex justify-content-center align-items-center mx-auto inside col-11 col-sm-8"
-                    style="background: var(--bs-dark);border-radius: 30px;border-color: rgba(0,0,0,0.1);padding: 10px;height: 40vh;padding-top: 15px;padding-bottom: 15px;">
+                    style="background: var(--bs-dark);border-radius: 30px;border-color: rgba(0,0,0,0.1);padding: 10px;height: 40vh;padding-top: 15px;padding-bottom: 15px; margin-bottom: 15px;">
                     <textarea id="myWords"
-                        style="background: rgba(255,255,255,0);border: none;outline: none;color: rgb(255,255,255);text-align: justify;font-family: Amaranth, sans-serif;font-size: 20px;width: 90%;height: 90%;"
-                        name="TypingSpeed" placeholder="Type here..." cols="100" rows="10"></textarea>
+                        style="background: rgba(255,255,255,0);border: none;outline: none;color: rgb(255,255,255);text-align: justify;font-family: Amaranth, sans-serif;font-size: 20px;width: 90%;height: 90%; "
+                        name="TypingSpeed" placeholder="Press Strat and type here..." cols="100" rows="10"></textarea>
                 </div>
             </div>
-        </div>
-    </div>
+            <!-- start-->
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <button class="btn btn-primary" id="btn" type="button"
+                    style="width: 100px; height: 40px; border-radius: 10px; font-family: Amaranth, sans-serif; font-size:18px; border: none; background: rgba(0,0,0,0.07);box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);color: rgba(255, 255, 255, 0.5); margin: 10px 0px;">Start</button>
+            </div>
 
-    <div class="d-flex justify-content-center align-items-center mx-auto col-md-6" style="height: 10vh;margin: 15px;">
-        <button class="btn btn-primary" id="btn" type="button"
-            style="width: 150px;height: 40px;border-radius: 10px;font-family: Amaranth, sans-serif; font-size:18px;border: 0px outset rgb(0,0,0);background: rgba(0,0,0,0.08);box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);color: rgba(255, 255, 255, 0.726);">Start</button>
+
+
+        </div>
     </div>
 
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
