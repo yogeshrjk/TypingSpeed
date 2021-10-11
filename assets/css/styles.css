@@ -21,11 +21,18 @@
 } */
 
 #result {
-  color: rgba(255, 255, 255, 0.4);
+  color: white;
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
   font-family: Amaranth, sans-serif;
-  visibility: hidden;
+  display: none;
+}
+
+.correct {
+  color: white !important;
+}
+.incorrect {
+  color: rgba(255, 0, 0, 0.5) !important;
 }
 
 @media only screen and (min-width: 575px) {
