@@ -5,6 +5,9 @@ It measures typing speed in WPM (words per minute).
 It is a calculation of how fast you type words. 
 It measure gross speed in our typing test.
 
-To find out your typing speed and accuracy, to understand whether you need to improve something.
+To find out your typing speed and accuracy in just 1 minute, to understand whether you need to improve something.
 The average typing speed is 40 WPM, try to exceed it! 
 You can take the test several times and see your typing speed improve over time.
+
+
+<code>http://yogeshrjk.github.io/TypingSpeed/</code>
