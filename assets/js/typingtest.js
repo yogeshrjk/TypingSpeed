@@ -4,7 +4,7 @@ const sentence =
         "Long, slender neck, feminine curves. Victory, she\'s mine at last! On pulsing, rhythmic strokes we rise. Higher, faster Crescendo! My latest love, a violin.",
         "A Victory Medal displayed proudly on his chest. Scarred hands coaxed sorrowful notes from an old violin. Pennies scattered in the case at his feet.",
         "Mother\'s antique violin case was the perfect makeshift coffin for her spoilt, skittish, confrontational cat. The plan, while unpalatable was meticulously executed. Victory was mine.",
-        "Police victory, infamous Mr Vargas apprehended! Vargas explained, “I chose to play the double base because you can\'t hide a corpse in a violin case”.",
+        "Police victory, infamous Mr Vargas apprehended! Vargas explained, \"I chose to play the double base because you can\'t hide a corpse in a violin case\".",
         "The Winged Victory stands resolute against the forceful sea wind, drapery sculpted over violin hips. Tourists surge through the Louvre, taking selfies, unmoved by history.",
         "Winter withdraws. Whale song sounds, like sweetly-played violins. The frolicsome pod heads north. One last victory wave, they submerge and are gone for another season.",
         "The violin stuck against her head. Alexia stumbled stunned by the irony. Weren\'t composers more composed? She fell. His victory came with strings attached.",
@@ -18,7 +18,7 @@ const btn = document.getElementById('btn');
 const result = document.getElementById('resulttag');
 
 let startTime, endTime;
-let timer = 0;
+let timer = 60;
 let interval = null;
 let index = 0;
 
@@ -96,14 +96,14 @@ typeWords.addEventListener("input", e => {
 //countdown function
 
 let countDown = () => {
-    if (timer < 5) {
-        timer++;
+    if (timer > 0) {
+        timer--;
         btn.innerText = timer;
     }
     else {
         typeWords.disabled = true;
         clearInterval(interval);
-        timer = 0;
+        timer = 60;
         btn.innerText = "Start";
         end();
 
@@ -121,7 +121,7 @@ const compareWords = (str1, str2) => {
             ++count;
         }
     });
-    let error = (word1.length - count);
+    let error = word2.length - count;
     return ` 
     correct words: ${count}
     Errors: ${error} `;
@@ -143,11 +143,7 @@ btn.addEventListener('click', function () {
 
 
     }
-    // else if (this.innerText == "Done") {
-    //     typeWords.disabled = true;
-    //     btn.innerText = "Start";
-    //     end();
-    // }
+
 });
 
 
