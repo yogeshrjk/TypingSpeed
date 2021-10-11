@@ -1,7 +1,6 @@
 # TypingSpeedTest
 
-<img src="https://user-images.githubusercontent.com/65396589/136775602-ac8cd94b-e0a3-49ae-9005-633509d70384.jpg" width="100%"/>
-
+![Course](https://user-images.githubusercontent.com/65396589/136822534-191b627f-52ec-41b9-8deb-09b83834f853.png)
 
 
 Type a short piece of text to find out how fast can you type. Test your typing speed in wpm on English,
@@ -15,8 +14,4 @@ The average typing speed is 40 WPM, try to exceed it!
 You can take the test several times and see your typing speed improve over time.
 <code>http://yogeshrjk.github.io/TypingSpeed/</code>
 
-
-
-
-<img src="https://user-images.githubusercontent.com/65396589/136775642-551cb4d1-00d7-4cda-ada4-05211c17e059.jpg" width="100%"/>
 
